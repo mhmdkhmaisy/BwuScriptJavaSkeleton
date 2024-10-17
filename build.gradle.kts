@@ -1,4 +1,3 @@
-
 plugins {
     id("java")
     `maven-publish`
@@ -13,6 +12,14 @@ repositories {
     maven {
         setUrl("https://nexus.botwithus.net/repository/maven-snapshots/")
     }
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(20))  // Ensuring Java 20 is used
+    }
+    sourceCompatibility = JavaVersion.VERSION_20
+    targetCompatibility = JavaVersion.VERSION_20
 }
 
 configurations {
